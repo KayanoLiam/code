@@ -13,12 +13,19 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Rust',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Install/安装', link: '/Rust/install' },
+          { text: 'Hello World', link: '/Rust/helloworld' },
+          { text: 'cargo包管理器', link: '/Rust/cargo' }
         ]
-      }
+      },
+      // {
+      //   text:'Python',
+      //   items:[
+      //     {text:'Install/安装'}
+      //   ]
+      // }
     ],
 
     socialLinks: [
