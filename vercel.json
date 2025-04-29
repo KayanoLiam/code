@@ -1,15 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": ".vitepress/dist",
-        "buildCommand": "npm run docs:build"
-      }
-    }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/.vitepress/dist/index.html" }
-  ]
+  "buildCommand": "npm run docs:build",
+  "outputDirectory": ".vitepress/dist"
 }
