@@ -4,7 +4,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": ".vitepress/dist"
+        "distDir": ".vitepress/dist",
+        "buildCommand": "npm run docs:build"
       }
     }
   ],
