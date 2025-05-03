@@ -13,12 +13,17 @@ hero:
     - theme: alt
       text: Python
       link: /api-examples
+    - theme: alt
+      text: Actix-web
+      link: /Rust/Actix_web/Basics/Getting_started
 
 features:
   - title: Rust
     details: 不断在本站分享关于Rust的中文教程
   - title: Python
     details: 关于Python的一小部分教程
+  - title: Actix-web
+    details: Actix-web的中文教程,根据英文版本进行通俗化解释之后的版本
   # - title: Feature C
   #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
