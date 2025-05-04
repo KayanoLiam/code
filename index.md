@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Actix-web
       link: /Rust/Actix_web/Basics/Getting_started
+    - theme: alt
+      text: Unsafe Rust
+      link: /Rust/Unsafe Rust/Introduction
 
 features:
   - title: Rust
@@ -24,7 +27,7 @@ features:
     details: 关于Python的一小部分教程
   - title: Actix-web
     details: Actix-web的中文教程,根据英文版本进行通俗化解释之后的版本
-  # - title: Feature C
-  #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Unsafe Rust
+    details: Rust的黑魔法，需要有一定的基础。被称为死灵书。是英文书《Rustonomicon》的通俗解释版本
 ---
 

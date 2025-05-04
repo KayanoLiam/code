@@ -58,6 +58,15 @@ export default defineConfig({
           { text: 'HTTP Server initialization', link: '/Rust/Actix_web/Diagrams/HTTP_Server_initialization' },
           { text: 'Connection Lifecycle', link: '/Rust/Actix_web/Diagrams/Connection_Lifecycle' },
         ]
+      },
+      {
+        text:'Unsafe Rust',
+        items:[
+          { text: 'Introduction', link: '/Rust/Unsafe Rust/Introduction' },
+          { text: 'Meet Safe and Unsafe', link: '/Rust/Unsafe Rust/Meet_Safe_and_Unsafe' },
+          { text: 'How Safe and Unsafe Interact', link: '/Rust/Unsafe Rust/How_Safe_and_Unsafe_Interact' },
+          { text: 'What Unsafe Rust Can Do', link: '/Rust/Unsafe Rust/What_Unsafe_Rust_Can_Do' },
+        ]
       }
     ],
 
