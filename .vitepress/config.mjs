@@ -15,9 +15,24 @@ export default defineConfig({
       {
         text: 'Rust',
         items: [
-          { text: 'Install/安装', link: '/Rust/install' },
+          { text: 'Install', link: '/Rust/install' },
           { text: 'Hello World', link: '/Rust/helloworld' },
-          { text: 'cargo包管理器', link: '/Rust/cargo' }
+          { text: 'Hello Cargo', link: '/Rust/cargo' },
+          { text: 'Programming a Guessing Game', link: '/Rust/Programming_a_Guessing_Game' },
+          { text: 'Common Programming Concepts', link: '/Rust/Common_Programming_Concepts' },
+          { text: 'Variables and Mutability', link: '/Rust/Variables_and_Mutability' },
+          { text: 'Data Types', link: '/Rust/Data_Types' },
+          { text: 'Functions', link: '/Rust/Functions' },
+          { text: 'Comments', link: '/Rust/Comments' },
+          { text: 'Control Flow', link: '/Rust/Control_Flow' },
+          { text: 'Understanding Ownership', link: '/Rust/Understanding_Ownership' },
+          { text: 'What Is Ownership', link: '/Rust/What_Is_Ownership' },
+          { text: 'References and Borrowing', link: '/Rust/References_and_Borrowing' },
+          { text: 'The Slice Type', link: '/Rust/The_Slice_Type' },
+          { text: 'Using Structs to Structure Related Data', link: '/Rust/Using_Structs_to_Structure_Related_Data' },
+          { text: 'Defining and Instantiating Structs', link: '/Rust/Defining_and_Instantiating_Structs' },
+          { text: 'An Example Program Using Structs', link: '/Rust/An_Example_Program_Using_Structs' },
+          { text: 'Method Syntax', link: '/Rust/Method_Syntax' }
         ]
       },
       {
@@ -40,8 +55,8 @@ export default defineConfig({
           { text: 'Auto Reloading', link: '/Rust/Actix_web/Patterns/Auto_Reloading' },
           { text: 'Databases', link: '/Rust/Actix_web/Patterns/Databases' },
           { text: 'Hosting on Shuttle', link: '/Rust/Actix_web/Patterns/Hosting_on_Shuttle' },
-          {text:'HTTP Server initialization',link:'/Rust/Actix_web/Diagrams/HTTP_Server_initialization'},
-          {text:'Connection Lifecycle',link:'/Rust/Actix_web/Diagrams/Connection_Lifecycle'},
+          { text: 'HTTP Server initialization', link: '/Rust/Actix_web/Diagrams/HTTP_Server_initialization' },
+          { text: 'Connection Lifecycle', link: '/Rust/Actix_web/Diagrams/Connection_Lifecycle' },
         ]
       }
     ],
