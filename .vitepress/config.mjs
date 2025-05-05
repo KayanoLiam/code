@@ -13,6 +13,12 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'News',
+        items: [
+          { text: 'Rewa070505', link: '/news/rewa070505' }
+        ]
+      },
+      {
         text: 'Rust',
         items: [
           { text: 'Install', link: '/Rust/install' },
@@ -66,6 +72,12 @@ export default defineConfig({
           { text: 'Meet Safe and Unsafe', link: '/Rust/Unsafe Rust/Meet_Safe_and_Unsafe' },
           { text: 'How Safe and Unsafe Interact', link: '/Rust/Unsafe Rust/How_Safe_and_Unsafe_Interact' },
           { text: 'What Unsafe Rust Can Do', link: '/Rust/Unsafe Rust/What_Unsafe_Rust_Can_Do' },
+        ]
+      },
+      {
+        text:'Future',
+        items:[
+          { text: 'Future', link: '/future/future_rewa_070505' },
         ]
       }
     ],

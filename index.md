@@ -8,6 +8,9 @@ hero:
   tagline: 我想用大白话来讲一些很难讲的东西(好像有语病bushi)
   actions:
     - theme: brand
+      text: What's new
+      link: /news/rewa070505
+    - theme: brand
       text: Rust
       link: /Rust/install
     - theme: alt
@@ -19,6 +22,9 @@ hero:
     - theme: alt
       text: Unsafe Rust
       link: /Rust/Unsafe Rust/Introduction
+    - theme: alt
+      text: Future
+      link: /future/future_rewa_070505
 
 features:
   - title: Rust
