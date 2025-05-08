@@ -38,7 +38,10 @@ export default defineConfig({
           { text: 'Using Structs to Structure Related Data', link: '/Rust/Using_Structs_to_Structure_Related_Data' },
           { text: 'Defining and Instantiating Structs', link: '/Rust/Defining_and_Instantiating_Structs' },
           { text: 'An Example Program Using Structs', link: '/Rust/An_Example_Program_Using_Structs' },
-          { text: 'Method Syntax', link: '/Rust/Method_Syntax' }
+          { text: 'Method Syntax', link: '/Rust/Method_Syntax' },
+          { text: 'Enums and Pattern Matching', link: '/Rust/Enums_and_Pattern_Matching' },
+          { text: 'Defining an Enum', link: '/Rust/Defining_an_Enum' },
+          { text: 'The match Control Flow Construct', link: '/Rust/The_match_Control_Flow_Construct' },
         ]
       },
       {
@@ -66,8 +69,8 @@ export default defineConfig({
         ]
       },
       {
-        text:'Unsafe Rust',
-        items:[
+        text: 'Unsafe Rust',
+        items: [
           { text: 'Introduction', link: '/Rust/Unsafe Rust/Introduction' },
           { text: 'Meet Safe and Unsafe', link: '/Rust/Unsafe Rust/Meet_Safe_and_Unsafe' },
           { text: 'How Safe and Unsafe Interact', link: '/Rust/Unsafe Rust/How_Safe_and_Unsafe_Interact' },
@@ -75,8 +78,8 @@ export default defineConfig({
         ]
       },
       {
-        text:'Future',
-        items:[
+        text: 'Future',
+        items: [
           { text: 'Future', link: '/future/future_rewa_070505' },
         ]
       }
