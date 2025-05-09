@@ -90,6 +90,14 @@ export default defineConfig({
             { text: 'Meet Safe and Unsafe', link: '/Rust/Unsafe Rust/Meet_Safe_and_Unsafe' },
             { text: 'How Safe and Unsafe Interact', link: '/Rust/Unsafe Rust/How_Safe_and_Unsafe_Interact' },
             { text: 'What Unsafe Rust Can Do', link: '/Rust/Unsafe Rust/What_Unsafe_Rust_Can_Do' },
+            { text: 'Working with Unsafe', link: '/Rust/Unsafe Rust/Working_with_Unsafe' },
+            { text: 'Data Representation in Rust', link: '/Rust/Unsafe Rust/Data_Representation_in_Rust' },
+            { text: 'repr(Rust)', link: '/Rust/Unsafe Rust/repr(Rust)' },
+            { text: 'Exotically Sized Types', link: '/Rust/Unsafe Rust/Exotically_Sized_Types' },
+            { text: 'Alternative representations', link: '/Rust/Unsafe Rust/Alternative_representations' },
+            { text: 'Ownership and Lifetimes', link: '/Rust/Unsafe Rust/Ownership_and_Lifetimes' },
+            { text: 'References', link: '/Rust/Unsafe Rust/References' },
+            {text:'Aliasing',link:'/Rust/Unsafe Rust/Aliasing'},
           ]
         }
       ],
