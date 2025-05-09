@@ -20,7 +20,8 @@ export default defineConfig({
           // collapsible: true, // 可选：是否可折叠
           // collapsed: false, // 可选：默认是否折叠 (如果 collapsible 为 true)
           items: [
-            { text: 'Rewa070505', link: '/news/rewa070505' }
+            { text: 'Rewa070505', link: '/news/rewa070505' },
+            { text: 'Rewa070510', link: '/news/rewa070510' }
           ]
         }
       ],
