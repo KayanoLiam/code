@@ -13,6 +13,9 @@ hero:
     - theme: brand
       text: Rust
       link: /Rust/install
+    # - theme: brand
+    #   text: Solana
+    #   link: /solana/solana
     - theme: alt
       text: Python
       link: /api-examples
