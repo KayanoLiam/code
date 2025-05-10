@@ -1,4 +1,3 @@
-
 # 用结构体组织数据 (An Example Program Using Structs)
 咱们通过一个具体的例子来看看**结构体 (Structs)** 如何帮助我们组织数据，让代码更清晰、更易懂。
 

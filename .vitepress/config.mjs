@@ -53,6 +53,13 @@ export default defineConfig({
             { text: 'Enums and Pattern Matching', link: '/Rust/Enums_and_Pattern_Matching' },
             { text: 'Defining an Enum', link: '/Rust/Defining_an_Enum' },
             { text: 'The match Control Flow Construct', link: '/Rust/The_match_Control_Flow_Construct' },
+            { text: 'Concise Control Flow with if let and let else', link: '/Rust/Concise_Control_Flow_with_if_let_and_let_else' },
+            { text: 'Managing Growing Projects with Packages, Crates, and Modules', link: '/Rust/Managing_Growing_Projects_with_Packages_Crates_and_Modules' },
+            { text: 'Packages and Crates', link: '/Rust/Packages_and_Crates' },
+            { text: 'Defining Modules to Control Scope and Privacy', link: '/Rust/Defining_Modules_to_Control_Scope_and_Privacy' },
+            { text: 'Paths for Referring to an Item in the Module Tree', link: '/Rust/Paths_for_Referring_to_an_Item_in_the_Module_Tree' },
+            { text: 'Bringing Paths into Scope with the use Keyword', link: '/Rust/Bringing_Paths_into_Scope_with_the_use_Keyword' },
+            { text: 'Separating Modules into Different Files', link: '/Rust/Separating_Modules_into_Different_Files' },
           ]
         },
         {
@@ -97,7 +104,7 @@ export default defineConfig({
             { text: 'Alternative representations', link: '/Rust/Unsafe Rust/Alternative_representations' },
             { text: 'Ownership and Lifetimes', link: '/Rust/Unsafe Rust/Ownership_and_Lifetimes' },
             { text: 'References', link: '/Rust/Unsafe Rust/References' },
-            {text:'Aliasing',link:'/Rust/Unsafe Rust/Aliasing'},
+            { text: 'Aliasing', link: '/Rust/Unsafe Rust/Aliasing' },
           ]
         }
       ],
