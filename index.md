@@ -12,13 +12,13 @@ hero:
       link: /news/rewa070505
     - theme: brand
       text: Rust
-      link: /Rust/install
+      link: /Rust/Basics/install
     # - theme: brand
     #   text: Solana
     #   link: /solana/solana
     - theme: alt
       text: Python
-      link: /api-examples
+      link: /Python/Environment/uv
     - theme: alt
       text: Actix-web
       link: /Rust/Actix_web/Basics/Getting_started

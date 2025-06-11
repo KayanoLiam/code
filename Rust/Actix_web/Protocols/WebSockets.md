@@ -167,3 +167,5 @@ async fn main() -> std::io::Result<()> {
 7.  handler 函数**立即**返回 `Ok(res)`，完成握手。
 
 这样，你就用 Actix Web 和 `actix-ws` 建立了一个可以进行实时双向通信的 WebSocket 服务！
+
+这个页面也有一个导航bug，我们始终在排查中，请在左边的侧边栏中手动选择你要阅读的内容而不是直接点击Next Page
