@@ -1,24 +1,24 @@
 /**
- * 自定义主题颜色 - 将蓝色改为橙色
- * Customize theme colors - Change blue to orange
+ * 自定义主题颜色 - 将蓝色改为天青色
+ * Customize theme colors - Change blue to cyan
  */
 
 :root {
-  /* 主要品牌色 - 橙色系 */
-  --vp-c-brand-1: #ff6b35;
-  --vp-c-brand-2: #ff8c42;
-  --vp-c-brand-3: #ffa726;
-  --vp-c-brand-soft: rgba(255, 107, 53, 0.14);
+  /* 主要品牌色 - 偏绿的天青色系 */
+  --vp-c-brand-1: #00b8a9;
+  --vp-c-brand-2: #26c6b8;
+  --vp-c-brand-3: #4dd0c7;
+  --vp-c-brand-soft: rgba(0, 184, 169, 0.14);
 
   /* 悬停状态 */
-  --vp-c-brand-1-hover: #e55a2b;
-  --vp-c-brand-2-hover: #e57a35;
-  --vp-c-brand-3-hover: #ff9800;
+  --vp-c-brand-1-hover: #00a693;
+  --vp-c-brand-2-hover: #00b8a9;
+  --vp-c-brand-3-hover: #26c6b8;
 
   /* 激活状态 */
-  --vp-c-brand-1-active: #d14d24;
-  --vp-c-brand-2-active: #cc6929;
-  --vp-c-brand-3-active: #f57c00;
+  --vp-c-brand-1-active: #00947f;
+  --vp-c-brand-2-active: #00a693;
+  --vp-c-brand-3-active: #00b8a9;
 
   /* 按钮相关颜色 */
   --vp-button-brand-border: transparent;
@@ -32,12 +32,12 @@
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
 }
 
-/* 深色模式下的橙色调整 */
+/* 深色模式下的偏绿天青色调整 */
 .dark {
-  --vp-c-brand-1: #ff8c42;
-  --vp-c-brand-2: #ffa726;
-  --vp-c-brand-3: #ffb74d;
-  --vp-c-brand-soft: rgba(255, 140, 66, 0.16);
+  --vp-c-brand-1: #26c6b8;
+  --vp-c-brand-2: #4dd0c7;
+  --vp-c-brand-3: #80dad6;
+  --vp-c-brand-soft: rgba(38, 198, 184, 0.16);
 }
 
 /* 确保链接也使用橙色 */
