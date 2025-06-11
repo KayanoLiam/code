@@ -116,7 +116,7 @@ npm run docs:preview
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+本项目采用 MIT 许可证 - 查看 [LICENSE](https://github.com/KayanoLiam/Kayano-s-code-channel/blob/main/LICENSE) 文件了解详情。
 
 ## 🙏 致谢
 
