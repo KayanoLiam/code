@@ -16,12 +16,12 @@ export default defineConfig({
       // 当 URL 匹配 '/news/' 前缀时，显示这个侧边栏
       '/news/': [
         {
-          text: 'News',
-          // collapsible: true, // 可选：是否可折叠
-          // collapsed: false, // 可选：默认是否折叠 (如果 collapsible 为 true)
+          text: '更新日志',
+          collapsible: true,
+          collapsed: false,
           items: [
-            { text: 'Rewa070505', link: '/news/rewa070505' },
-            { text: 'Rewa070510', link: '/news/rewa070510' }
+            { text: '2025年5月10日 - 侧边栏优化与Unsafe Rust更新', link: '/news/rewa070510' },
+            { text: '2025年5月4日 - Rust函数与结构体章节', link: '/news/rewa070505' }
           ]
         }
       ],
@@ -161,6 +161,30 @@ export default defineConfig({
             { text: '异常处理', link: '/Python/Basics/exceptions' },
             { text: '文件操作', link: '/Python/Basics/file_operations' },
             { text: '推导式和实用技巧', link: '/Python/Basics/comprehensions' },
+          ]
+        }
+      ],
+      // 当 URL 匹配 '/Zig/' 前缀时，显示这个侧边栏
+      '/Zig/': [
+        {
+          text: 'Zig Basics',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: 'Install', link: '/Zig/Basics/install' },
+            { text: 'Hello World', link: '/Zig/Basics/helloworld' },
+            { text: 'Build System', link: '/Zig/Basics/build_system' },
+            { text: 'Common Programming Concepts', link: '/Zig/Basics/Common_Programming_Concepts' },
+            { text: 'Variables', link: '/Zig/Basics/Variables' },
+            { text: 'Data Types', link: '/Zig/Basics/Data_Types' },
+            { text: 'Functions', link: '/Zig/Basics/Functions' },
+            { text: 'Comments', link: '/Zig/Basics/Comments' },
+            { text: 'Control Flow', link: '/Zig/Basics/Control_Flow' },
+            { text: 'Error Handling', link: '/Zig/Basics/Error_Handling' },
+            { text: 'Structs', link: '/Zig/Basics/Structs' },
+            { text: 'Enums', link: '/Zig/Basics/Enums' },
+            { text: 'Unions', link: '/Zig/Basics/Unions' },
+            { text: 'Comptime', link: '/Zig/Basics/Comptime' },
           ]
         }
       ],

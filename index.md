@@ -13,6 +13,9 @@ hero:
     - theme: brand
       text: Rust
       link: /Rust/Basics/install
+    - theme: brand
+      text: Zig
+      link: /Zig/Basics/install
     # - theme: brand
     #   text: Solana
     #   link: /solana/solana
@@ -32,6 +35,8 @@ hero:
 features:
   - title: Rust
     details: Rust 是一门由 Mozilla 开发的系统编程语言，通过独特的所有权与借用机制在编译期保障内存安全，同时提供高性能和并发支持。
+  - title: Zig
+    details: Zig 是一门通用的系统编程语言和工具链，旨在构建健壮、最优和可复用的软件。它注重简单性、性能和安全，并提供对内存的精细控制。
   - title: Python
     details: Python 是一门高级、动态类型的解释型编程语言，以简洁易读的语法和丰富的标准库著称，广泛应用于 Web 开发、数据分析、人工智能等领域。
   - title: Actix-web
@@ -39,4 +44,3 @@ features:
   - title: Unsafe Rust
     details: Unsafe Rust 是 Rust 语言中允许绕过部分编译时安全检查的代码区域，开发者可以使用原始指针、调用 `unsafe` 函数、操作 `static mut`、定义 `unsafe` trait 等，但必须自行保证内存和并发安全。
 ---
-
