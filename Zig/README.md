@@ -39,16 +39,21 @@
 8. **[结构体](Basics/Structs.md)** - 自定义数据类型
 9. **[枚举](Basics/Enums.md)** - 枚举类型与标签联合
 10. **[联合体](Basics/Unions.md)** - 裸联合与标签联合
-11. **数组与切片 (即将推出)** - 固定数组、切片、遍历与边界
+11. **[数组与切片](Basics/Arrays_and_Slices.md)** - 固定数组、切片、遍历与边界 ✅
 
 ### 🔥 进阶阶段
 12. **[编译时计算](Basics/Comptime.md)** - 强大的 comptime 系统
 13. **[构建系统](Basics/build_system.md)** - Zig 的构建工具
 14. **[注释和文档](Basics/Comments.md)** - 代码文档化
-15. **指针与引用 (即将推出)** - 指针、可变性、别名与安全
-16. **可选类型与空值 (即将推出)** - `?T`、空检查与解构
-17. **内存与分配器 (即将推出)** - GPA、arena、所有权约定
-18. **模块与导入 (即将推出)** - `@import`、命名空间与可见性
+15. **[指针与引用](Basics/Pointers.md)** - 指针、可变性、别名与安全 ✅
+16. **[可选类型与空值](Basics/Optionals.md)** - `?T`、空检查与解构 ✅
+17. **[内存与分配器](Basics/Allocators.md)** - GPA、Arena、FixedBuffer ✅
+18. **[模块与导入](Basics/Modules.md)** - `@import`、命名空间与可见性 ✅
+
+### 🧰 工具与实践
+19. **[测试与调试](Basics/Testing_and_Debugging.md)** - std.testing、断言、基准与日志 ✅
+20. **[I/O 与文件](Basics/IO_and_Files.md)** - 标准流、读写文件、缓冲与目录 ✅
+21. **[并发与异步](Basics/Async_and_Event_Loop.md)** - 线程、事件驱动 I/O、协作式并发 ✅
 
 ## 🗂️ 文档结构
 
