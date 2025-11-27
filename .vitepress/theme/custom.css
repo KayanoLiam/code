@@ -1,103 +1,159 @@
 /**
- * 自定义主题颜色 - 将蓝色改为天青色
- * Customize theme colors - Change blue to cyan
+ * Neo-Brutalism x Cyber-Acid Theme
  */
 
+/* Import Outfit font */
+/* Note: @fontsource/outfit is imported in index.js */
+
 :root {
-  /* 主要品牌色 - 偏绿的天青色系 */
-  --vp-c-brand-1: #00b8a9;
-  --vp-c-brand-2: #26c6b8;
-  --vp-c-brand-3: #4dd0c7;
-  --vp-c-brand-soft: rgba(0, 184, 169, 0.14);
+  /* Base Colors - Stark Black & White */
+  --vp-c-bg: #000000;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-elv: #1a1a1a;
 
-  /* 悬停状态 */
-  --vp-c-brand-1-hover: #00a693;
-  --vp-c-brand-2-hover: #00b8a9;
-  --vp-c-brand-3-hover: #26c6b8;
+  /* Brand Colors - Acid Green & Hot Pink */
+  --vp-c-brand-1: #ccff00;
+  /* Acid Green */
+  --vp-c-brand-2: #ff00ff;
+  /* Hot Pink */
+  --vp-c-brand-3: #00ffff;
+  /* Cyan */
+  --vp-c-brand-soft: rgba(204, 255, 0, 0.1);
 
-  /* 激活状态 */
-  --vp-c-brand-1-active: #00947f;
-  --vp-c-brand-2-active: #00a693;
-  --vp-c-brand-3-active: #00b8a9;
+  /* Text Colors */
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #cccccc;
+  --vp-c-text-3: #888888;
 
-  /* 按钮相关颜色 */
-  --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
-  --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
-  --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  /* Borders & Dividers - Hard & Thick */
+  --vp-c-divider: #333333;
+  --vp-c-border: #ccff00;
+  /* Neon borders everywhere */
+
+  /* Typography */
+  --vp-font-family-base: 'Outfit', 'Inter', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+  /* Neo-Brutalism Vars */
+  --nb-border: 2px solid var(--vp-c-brand-1);
+  --nb-shadow: 4px 4px 0px var(--vp-c-brand-2);
+  --nb-shadow-hover: 6px 6px 0px var(--vp-c-brand-3);
 }
 
-/* 深色模式下的偏绿天青色调整 */
+/* Dark Mode Overrides (Enforcing dark cyber look) */
 .dark {
-  --vp-c-brand-1: #26c6b8;
-  --vp-c-brand-2: #4dd0c7;
-  --vp-c-brand-3: #80dad6;
-  --vp-c-brand-soft: rgba(38, 198, 184, 0.16);
+  --vp-c-bg: #000000;
+  --vp-c-brand-1: #ccff00;
+  --vp-c-brand-2: #ff00ff;
 }
 
-/* 确保链接也使用橙色 */
-.vp-doc a {
-  color: var(--vp-c-brand-1);
+/* Global Styles */
+body {
+  background-color: var(--vp-c-bg);
+  font-family: var(--vp-font-family-base);
+  overflow-x: hidden;
+  /* Scanline effect overlay */
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
 }
 
-.vp-doc a:hover {
-  color: var(--vp-c-brand-2);
+/* Navbar - Hard Edges, No Glass */
+.VPNavBar {
+  background-color: #000000 !important;
+  border-bottom: var(--nb-border) !important;
+  backdrop-filter: none !important;
 }
 
-/* 首页按钮样式优化 */
+/* Sidebar - Hard Edges */
+.VPSidebar {
+  background-color: #000000 !important;
+  border-right: var(--nb-border) !important;
+}
+
+/* Button Styling - Neo-Brutalism */
 .VPButton.brand {
-  border-color: var(--vp-button-brand-border);
-  color: var(--vp-button-brand-text);
-  background-color: var(--vp-button-brand-bg);
+  background: var(--vp-c-brand-1);
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 800;
+  border-radius: 0;
+  /* Hard corners */
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px var(--vp-c-brand-2);
+  transition: all 0.1s steps(2);
+  /* Snappy transition */
 }
 
 .VPButton.brand:hover {
-  border-color: var(--vp-button-brand-hover-border);
-  color: var(--vp-button-brand-hover-text);
-  background-color: var(--vp-button-brand-hover-bg);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--vp-c-brand-3);
+  background-color: var(--vp-c-brand-1);
 }
 
 .VPButton.brand:active {
-  border-color: var(--vp-button-brand-active-border);
-  color: var(--vp-button-brand-active-text);
-  background-color: var(--vp-button-brand-active-bg);
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
 }
 
-/* 导航栏激活状态 */
-.VPNavBarMenuLink.active .link {
+/* Link Styling */
+.vp-doc a {
   color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 2px solid var(--vp-c-brand-1);
+  transition: background 0.2s;
 }
 
-/* 侧边栏激活状态 */
-.VPSidebarItem.is-active > .item .link {
-  color: var(--vp-c-brand-1);
+.vp-doc a:hover {
+  background-color: var(--vp-c-brand-1);
+  color: #000;
 }
 
-/* 搜索框聚焦状态 */
-.VPNavBarSearch .DocSearch-Button:focus {
-  border-color: var(--vp-c-brand-1);
+/* Code Blocks - Cyber Terminal Look */
+.vp-doc div[class*='language-'] {
+  border-radius: 0;
+  border: var(--nb-border);
+  background-color: #050505;
+  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.1);
 }
 
-/* 代码块中的高亮 */
-.vp-code-group .tabs input:checked + label {
-  color: var(--vp-c-brand-1);
+/* Scrollbar - High Contrast */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #000;
+  border-left: 1px solid #333;
 }
 
-/* 自定义容器边框颜色 */
-.custom-block.tip {
-  border-color: var(--vp-c-brand-1);
-}
-
-/* 滚动条样式 */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--vp-c-brand-soft);
+  background: var(--vp-c-brand-1);
+  border: 2px solid #000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-2);
+}
+
+/* Selection */
+::selection {
+  background: var(--vp-c-brand-2);
+  color: #fff;
+}
+
+/* Custom Utilities */
+.text-glitch {
+  position: relative;
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--vp-font-family-base);
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
 }

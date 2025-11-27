@@ -2,36 +2,6 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-hero:
-  name: "Kayano code channel"
-  text: "A Rust and Python Site"
-  tagline: 我想用大白话来讲一些很难讲的东西(好像有语病bushi)
-  actions:
-    - theme: brand
-      text: What's new
-      link: /news/rewa070505
-    - theme: brand
-      text: Rust
-      link: /Rust/Basics/install
-    - theme: brand
-      text: Zig
-      link: /Zig/Basics/install
-    # - theme: brand
-    #   text: Solana
-    #   link: /solana/solana
-    - theme: alt
-      text: Python
-      link: /Python/Environment/uv
-    - theme: alt
-      text: Actix-web
-      link: /Rust/Actix_web/Basics/Getting_started
-    - theme: alt
-      text: Unsafe Rust
-      link: /Rust/Unsafe Rust/Introduction
-    - theme: alt
-      text: Future
-      link: /future/future_rewa_070505
-
 features:
   - title: Rust
     details: Rust 是一门由 Mozilla 开发的系统编程语言，通过独特的所有权与借用机制在编译期保障内存安全，同时提供高性能和并发支持。

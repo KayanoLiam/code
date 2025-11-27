@@ -130,3 +130,8 @@ public/build/
 
 # macOS
 .DS_Store
+.vercel
+.env*.local
+
+# Local Netlify folder
+.netlify
