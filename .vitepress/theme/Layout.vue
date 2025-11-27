@@ -1,13 +1,12 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
-import { onMounted, onUnmounted, nextTick, watch } from 'vue'
-import { useRoute } from 'vitepress'
+import { onMounted, onUnmounted } from 'vue'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import HomeHero from './components/HomeHero.vue'
+import Marquee from './components/Marquee.vue'
 
 const { Layout } = DefaultTheme
-const route = useRoute()
 
 let lenis
 
@@ -30,20 +29,6 @@ onMounted(() => {
   }
 
   requestAnimationFrame(raf)
-
-  // Integrate Lenis with GSAP ScrollTrigger if needed later
-  // gsap.ticker.add((time) => {
-  //   lenis.raf(time * 1000)
-  // })
-  
-  // Page transition effect
-  const el = document.querySelector('.VPContent')
-  if (el) {
-    gsap.fromTo(el, 
-      { opacity: 0, y: 20 }, 
-      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
-    )
-  }
 })
 
 onUnmounted(() => {
@@ -51,29 +36,17 @@ onUnmounted(() => {
     lenis.destroy()
   }
 })
-
-// Trigger animations on route change
-watch(
-  () => route.path,
-  () => {
-    if (lenis) lenis.scrollTo(0, { immediate: true })
-    
-    nextTick(() => {
-      const el = document.querySelector('.VPContent')
-      if (el) {
-        gsap.fromTo(el, 
-          { opacity: 0, y: 20 }, 
-          { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.1 }
-        )
-      }
-    })
-  }
-)
 </script>
 
 <template>
   <div class="theme-container">
+    <div class="crt-overlay"></div>
     <div class="background-layer"></div>
+    
+    <div class="top-marquee">
+      <Marquee text="WARNING: EXTREME_DESIGN_MODE_ACTIVATED // SYSTEM_UNSTABLE //" :speed="50" />
+    </div>
+
     <Layout>
       <template #home-hero-before>
         <HomeHero />
@@ -89,6 +62,12 @@ watch(
   min-height: 100vh;
 }
 
+.top-marquee {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .background-layer {
   position: fixed;
   top: 0;
@@ -96,12 +75,12 @@ watch(
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  /* Cyber Grid Pattern */
+  /* Cyber Grid Pattern - EXTREME */
   background-color: #000;
   background-image: 
-    linear-gradient(rgba(204, 255, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(204, 255, 0, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(204, 255, 0, 0.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(204, 255, 0, 0.15) 2px, transparent 2px);
+  background-size: 60px 60px;
   pointer-events: none;
 }
 
@@ -116,3 +95,4 @@ watch(
   background: radial-gradient(circle at center, transparent 0%, #000 90%);
 }
 </style>
+

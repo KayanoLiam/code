@@ -3,50 +3,60 @@ import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 
 const titleRef = ref(null)
-const descRef = ref(null)
 
 onMounted(() => {
-  // Glitch reveal effect
+  // Chaotic Reveal
   const tl = gsap.timeline()
   
-  tl.fromTo('.glitch-text', 
-    { opacity: 0, scale: 0.9 },
-    { opacity: 1, scale: 1, duration: 0.1, stagger: 0.05, ease: 'steps(3)' }
+  tl.fromTo('.chaos-text', 
+    { opacity: 0, scale: 2, rotation: 10 },
+    { opacity: 1, scale: 1, rotation: 0, duration: 0.2, stagger: 0.05, ease: 'rough' }
   )
-  .to('.glitch-text', {
-    x: 5, duration: 0.05, yoyo: true, repeat: 5
+  .to('.chaos-text', {
+    x: 'random(-5, 5)',
+    y: 'random(-5, 5)',
+    duration: 0.1,
+    repeat: 10,
+    yoyo: true
   })
-  .fromTo(descRef.value,
-    { opacity: 0, x: -20 },
-    { opacity: 1, x: 0, duration: 0.5, ease: 'power1.out' }
-  )
 })
 </script>
 
 <template>
-  <div class="home-hero">
-    <div class="content">
-      <div class="glitch-wrapper" ref="titleRef">
-        <h1 class="title glitch-text" data-text="CRAFTING">CRAFTING</h1>
-        <h1 class="title glitch-text" data-text="DIGITAL">DIGITAL</h1>
-        <h1 class="title glitch-text highlight" data-text="CHAOS">CHAOS</h1>
+  <div class="chaos-hero">
+    <div class="noise-bg"></div>
+    
+    <div class="content-grid">
+      <div class="grid-item title-area">
+        <h1 class="chaos-title">
+          <span class="chaos-text">CODE</span>
+          <span class="chaos-text">IS</span>
+          <span class="chaos-text highlight">WAR</span>
+        </h1>
       </div>
       
-      <div class="desc-box" ref="descRef">
-        <p class="description">
-          // RUST_ <br>
-          // PYTHON_ <br>
-          // WEB_DEV_ <br>
-          > ELEVATING CODE TO ART FORM_
+      <div class="grid-item info-area">
+        <div class="raw-box">
+          <div class="label">STATUS:</div>
+          <div class="value blink">CRITICAL</div>
+        </div>
+        <div class="raw-box">
+          <div class="label">LOC:</div>
+          <div class="value">99999+</div>
+        </div>
+      </div>
+
+      <div class="grid-item desc-area">
+        <p class="manifesto">
+          WE BUILD SYSTEMS TO BREAK THEM. <br>
+          RUST // PYTHON // WEB <br>
+          NO SAFETY. NO MERCY.
         </p>
       </div>
       
-      <div class="actions">
-        <a href="/Rust/Basics/install" class="action-btn primary">
-          [ START_LEARNING ]
-        </a>
-        <a href="https://github.com/KayanoLiam" target="_blank" class="action-btn secondary">
-          [ GITHUB_REPO ]
+      <div class="grid-item action-area">
+        <a href="/Rust/Basics/install" class="brutal-btn">
+          INITIALIZE_SEQUENCE
         </a>
       </div>
     </div>
@@ -54,143 +64,145 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.home-hero {
-  min-height: 80vh;
+.chaos-hero {
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   border-bottom: var(--nb-border);
+  background: #000;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  max-width: 1200px;
   width: 100%;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  border: 4px solid var(--vp-c-brand-3); /* Orange Border */
+  transform: rotate(-1deg);
 }
 
-.title {
-  font-family: var(--vp-font-family-base);
-  font-size: 6rem;
-  font-weight: 900;
-  line-height: 0.9;
-  margin: 0;
-  text-transform: uppercase;
-  color: #fff;
+.grid-item {
+  border: var(--nb-border);
+  padding: 40px;
+  background: #000;
   position: relative;
 }
 
-.title.highlight {
-  color: var(--vp-c-brand-1);
-  text-shadow: 4px 4px 0px var(--vp-c-brand-2);
-}
-
-/* Glitch Effect */
-.glitch-text::before,
-.glitch-text::after {
-  content: attr(data-text);
+.grid-item::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4px;
+  left: 4px;
   width: 100%;
   height: 100%;
-  background: var(--vp-c-bg);
+  background: var(--vp-c-brand-2);
+  z-index: -1;
 }
 
-.glitch-text::before {
-  left: 2px;
-  text-shadow: -1px 0 #ff00c1;
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
+.title-area {
+  grid-column: 1 / -1;
+  text-align: center;
+  border-color: var(--vp-c-brand-1);
 }
 
-.glitch-text::after {
-  left: -2px;
-  text-shadow: -1px 0 #00fff9;
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim2 5s infinite linear alternate-reverse;
+.chaos-title {
+  font-size: 8rem;
+  line-height: 0.8;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-.desc-box {
-  border: var(--nb-border);
-  padding: 20px;
-  background: #000;
-  box-shadow: var(--nb-shadow);
-  max-width: 500px;
+.chaos-text.highlight {
+  color: var(--vp-c-brand-3); /* Orange */
+  text-decoration: underline;
 }
 
-.description {
-  font-family: var(--vp-font-family-mono);
-  font-size: 1.2rem;
-  color: var(--vp-c-brand-1);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.actions {
+.info-area {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.action-btn {
-  font-family: var(--vp-font-family-mono);
+.raw-box {
+  border: 2px solid #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.value {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1.2rem;
+  color: var(--vp-c-brand-1);
+}
+
+.blink {
+  animation: blink 0.5s step-end infinite;
+}
+
+.desc-area {
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: center;
+}
+
+.manifesto {
+  font-family: var(--vp-font-family-mono);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.action-area {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+  border-color: var(--vp-c-brand-3);
+}
+
+.brutal-btn {
+  font-size: 2rem;
+  font-weight: 900;
+  background: var(--vp-c-brand-1);
+  color: #000;
+  padding: 20px 60px;
   text-decoration: none;
-  padding: 15px 30px;
-  border: 2px solid var(--vp-c-brand-1);
-  text-transform: uppercase;
+  border: 4px solid #000;
+  box-shadow: 10px 10px 0px var(--vp-c-brand-2);
   transition: all 0.1s;
 }
 
-.action-btn.primary {
-  background: var(--vp-c-brand-1);
-  color: #000;
-  box-shadow: var(--nb-shadow);
+.brutal-btn:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 15px 15px 0px var(--vp-c-brand-3);
+  background: #fff;
 }
 
-.action-btn.primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--nb-shadow-hover);
+.brutal-btn:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0;
 }
 
-.action-btn.secondary {
-  background: transparent;
-  color: var(--vp-c-brand-1);
-}
-
-.action-btn.secondary:hover {
-  background: var(--vp-c-brand-1);
-  color: #000;
-}
-
-@keyframes glitch-anim {
-  0% { clip: rect(30px, 9999px, 10px, 0); }
-  20% { clip: rect(80px, 9999px, 90px, 0); }
-  40% { clip: rect(10px, 9999px, 50px, 0); }
-  60% { clip: rect(40px, 9999px, 20px, 0); }
-  80% { clip: rect(70px, 9999px, 60px, 0); }
-  100% { clip: rect(20px, 9999px, 80px, 0); }
-}
-
-@keyframes glitch-anim2 {
-  0% { clip: rect(10px, 9999px, 80px, 0); }
-  20% { clip: rect(60px, 9999px, 10px, 0); }
-  40% { clip: rect(30px, 9999px, 50px, 0); }
-  60% { clip: rect(90px, 9999px, 20px, 0); }
-  80% { clip: rect(20px, 9999px, 70px, 0); }
-  100% { clip: rect(50px, 9999px, 30px, 0); }
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 3rem; }
-  .actions { flex-direction: column; }
+  .chaos-title { font-size: 4rem; }
+  .content-grid { grid-template-columns: 1fr; transform: none; }
+  .desc-area { grid-column: 1 / -1; }
 }
 </style>
