@@ -105,6 +105,54 @@ body {
   box-shadow: 0px 0px 0px #000;
 }
 
+/* Deprecated Tag Style */
+.deprecated-tag {
+  display: inline-block;
+  background-color: #ff0000;
+  /* Red */
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border: 2px solid #fff;
+  vertical-align: middle;
+  transform: rotate(-5deg);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Completed Tag Style */
+.completed-tag {
+  display: inline-block;
+  background-color: #00ff00;
+  /* Green */
+  color: #000;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border: 2px solid #000;
+  vertical-align: middle;
+  transform: rotate(5deg);
+  box-shadow: 2px 2px 0px #fff;
+  font-weight: 900;
+}
+
+/* Updating Tag Style */
+.updating-tag {
+  display: inline-block;
+  background-color: var(--vp-c-brand-3);
+  /* Signal Orange */
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border: 2px solid #fff;
+  vertical-align: middle;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0px #000;
+  font-weight: 900;
+  animation: blink 1s step-end infinite;
+}
+
 /* Link Styling */
 .vp-doc a {
   color: var(--vp-c-brand-1);
