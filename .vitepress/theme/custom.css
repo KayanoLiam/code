@@ -151,48 +151,6 @@ span.line {
   display: inline-block;
 }
 
-/* Keywords (fn, let, const, etc) -> Hot Pink */
-.vp-doc .token.keyword,
-.vp-doc .token.operator {
-  color: #ff00ff !important;
-  font-weight: bold;
-}
-
-/* Functions -> Cyan */
-.vp-doc .token.function {
-  color: #00ffff !important;
-}
-
-/* Strings -> Acid Green */
-.vp-doc .token.string {
-  color: #ccff00 !important;
-}
-
-/* Comments -> Bright Grey */
-.vp-doc .token.comment {
-  color: #888888 !important;
-  font-style: italic;
-}
-
-/* Types/Classes -> Signal Orange */
-.vp-doc .token.class-name,
-.vp-doc .token.type-annotation,
-.vp-doc .token.builtin {
-  color: #ff4d00 !important;
-}
-
-/* Numbers/Booleans -> Neon Purple */
-.vp-doc .token.number,
-.vp-doc .token.boolean {
-  color: #bd00ff !important;
-}
-
-/* Variables/Properties -> White */
-.vp-doc .token.property,
-.vp-doc .token.variable {
-  color: #ffffff !important;
-}
-
 /* Scrollbar - Chunky */
 ::-webkit-scrollbar {
   width: 20px;

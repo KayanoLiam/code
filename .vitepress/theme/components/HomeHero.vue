@@ -201,8 +201,61 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
-  .chaos-title { font-size: 4rem; }
-  .content-grid { grid-template-columns: 1fr; transform: none; }
-  .desc-area { grid-column: 1 / -1; }
+  .chaos-hero {
+    min-height: auto;
+    padding: 40px 10px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    transform: none;
+    gap: 10px;
+    border-width: 2px;
+  }
+
+  .grid-item {
+    padding: 20px;
+  }
+
+  .chaos-title {
+    font-size: 3rem; /* Much smaller for mobile */
+    line-height: 1;
+    word-break: break-word; /* Prevent overflow */
+  }
+
+  .info-area {
+    flex-direction: column; /* Stack info boxes */
+    width: 100%;
+  }
+
+  .raw-box {
+    width: 100%;
+  }
+
+  .desc-area {
+    grid-column: 1 / -1;
+  }
+
+  .manifesto {
+    font-size: 1rem;
+  }
+
+  .action-area {
+    padding: 30px 10px;
+  }
+
+  .brutal-btn {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    width: 100%;
+    text-align: center;
+    white-space: normal; /* Allow text wrap */
+  }
+}
+
+@media (max-width: 480px) {
+  .chaos-title {
+    font-size: 2.5rem;
+  }
 }
 </style>
