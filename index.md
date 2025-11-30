@@ -13,4 +13,6 @@ features:
     details: Actix-web 是基于 Rust 的高性能异步网页框架，构建在 Actix actor 系统之上，提供灵活的路由、中间件和 WebSocket 支持。
   - title: Unsafe Rust <span class="updating-tag">[UPDATING]</span>
     details: Unsafe Rust 是 Rust 语言中允许绕过部分编译时安全检查的代码区域，开发者可以使用原始指针、调用 `unsafe` 函数、操作 `static mut`、定义 `unsafe` trait 等，但必须自行保证内存和并发安全。
+  - title: C++ <span class="soon-tag">[COMING SOON]</span>
+    details: C++ 是一门高性能的通用编程语言，广泛应用于系统/应用软件、游戏开发、驱动程序等领域。它支持过程化、面向对象和泛型编程。
 ---
