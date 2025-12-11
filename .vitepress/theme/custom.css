@@ -1,337 +1,222 @@
-/**
- * EXTREME Neo-Brutalism x Cyber-Acid Theme
- */
+/* Traditional Japanese Aesthetic (Wabi-sabi + Ma + Miyabi) */
 
-/* Import Outfit font */
-/* Note: @fontsource/outfit is imported in index.js */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&family=Inter:wght@300;400&display=swap');
 
 :root {
-  /* Base Colors - Stark Black & White */
-  --vp-c-bg: #000000;
-  --vp-c-bg-alt: #0a0a0a;
-  --vp-c-bg-elv: #141414;
+  /* Colors - Traditional Japanese Names */
 
-  /* Brand Colors - Acid Green, Hot Pink, SIGNAL ORANGE */
-  --vp-c-brand-1: #ccff00;
-  /* Acid Green */
-  --vp-c-brand-2: #ff00ff;
-  /* Hot Pink */
-  --vp-c-brand-3: #ff4d00;
-  /* Signal Orange - NEW CLASH COLOR */
-  --vp-c-brand-soft: rgba(204, 255, 0, 0.2);
+  /* Primary Background: Toriganoko-iro (Eggshell / Rice Paper) */
+  --vp-c-bg: #F7F6F0;
+  --vp-c-bg-alt: #EBE9E2;
+  --vp-c-bg-elv: #DFDBD0;
 
-  /* Text Colors */
-  --vp-c-text-1: #ffffff;
-  --vp-c-text-2: #eeeeee;
-  --vp-c-text-3: #cccccc;
+  /* Accents */
+  --vp-c-brand-1: #6E755D;
+  /* Rikyu-cha (Tea Green) */
+  --vp-c-brand-2: #848A7B;
+  /* Yanagi-cha (Willow Tea) */
+  --vp-c-brand-3: #BFA46F;
+  /* Karacha (Mustard/Gold) */
 
-  /* Borders & Dividers - EXTREME THICKNESS */
-  --vp-c-divider: #ffffff;
-  --vp-c-border: #ccff00;
+  /* The "Inkan" Color - Kokihi (Deep Scarlet) */
+  --jap-red: #D3381C;
+
+  /* Text - Sumi (Ink) */
+  --vp-c-text-1: #2B2B2B;
+  /* Wet Ink */
+  --vp-c-text-2: #595857;
+  /* Dried Ink */
+  --vp-c-text-3: #8C8C8C;
+  /* Faded Ink */
+
+  --vp-c-divider: #D4D2C9;
+  --vp-c-border: #D4D2C9;
 
   /* Typography */
-  --vp-font-family-base: 'Outfit', sans-serif;
-  --vp-font-family-mono: 'JetBrains Mono', monospace;
+  --vp-font-family-base: 'Zen Old Mincho', serif;
+  /* Global Mincho */
+  --vp-font-family-mono: 'Menlo', monospace;
+  --vp-font-family-headings: 'Zen Old Mincho', serif;
 
-  /* Neo-Brutalism Vars */
-  --nb-border: 4px solid var(--vp-c-brand-1);
-  /* THICKER */
-  --nb-border-alt: 4px solid var(--vp-c-brand-2);
-  --nb-shadow: 8px 8px 0px var(--vp-c-brand-2);
-  /* DEEPER */
-  --nb-shadow-hover: 12px 12px 0px var(--vp-c-brand-3);
+  --vp-sidebar-width: 260px;
 }
 
-/* Dark Mode Overrides */
 .dark {
-  --vp-c-bg: #000000;
-  --vp-c-brand-1: #ccff00;
-  --vp-c-brand-2: #ff00ff;
+  /* Dark Mode: Kachi-iro (Victory Indigo) & Tetsukon (Iron Navy) */
+  --vp-c-bg: #181B26;
+  --vp-c-bg-alt: #1E212E;
+  --vp-c-bg-elv: #252836;
+
+  --vp-c-brand-1: #A5AC9A;
+  --vp-c-brand-2: #9FA596;
+  --vp-c-brand-3: #C2B6A6;
+
+  --jap-red: #E64B30;
+  /* Brighter Red for Dark Mode */
+
+  --vp-c-text-1: #E6E6E6;
+  --vp-c-text-2: #B3B3B3;
+  --vp-c-text-3: #737373;
+
+  --vp-c-divider: #2E3245;
+  --vp-c-border: #2E3245;
+}
+
+/* Washi Paper Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.dark body::before {
+  opacity: 0.05;
+  mix-blend-mode: overlay;
 }
 
 /* Global Styles */
 body {
-  background-color: var(--vp-c-bg);
   font-family: var(--vp-font-family-base);
-  overflow-x: hidden;
-  cursor: crosshair;
-  /* Custom Cursor */
+  letter-spacing: 0.05em;
+  /* Breathing room */
 }
 
-/* Navbar - Deconstructed */
-.VPNavBar {
-  background-color: #000000 !important;
-  border-bottom: var(--nb-border) !important;
-  backdrop-filter: none !important;
-}
-
-.VPNavBar .content {
-  border-left: var(--nb-border);
-  border-right: var(--nb-border);
-  background: #000;
-}
-
-/* Sidebar - Hard Edges */
-.VPSidebar {
-  background-color: #000000 !important;
-  border-right: var(--nb-border) !important;
-}
-
-/* Button Styling - EXTREME */
-.VPButton.brand {
-  background: var(--vp-c-brand-1);
-  border: 4px solid #000;
-  color: #000;
-  font-weight: 900;
-  font-size: 1.1rem;
-  border-radius: 0;
-  text-transform: uppercase;
-  box-shadow: var(--nb-shadow);
-  transition: all 0.05s steps(2);
-  position: relative;
-  overflow: hidden;
-}
-
-.VPButton.brand:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: var(--nb-shadow-hover);
-  background-color: var(--vp-c-brand-3);
-  /* Orange on hover */
-  color: #fff;
-}
-
-.VPButton.brand:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px #000;
-}
-
-/* Deprecated Tag Style */
-.deprecated-tag {
-  display: inline-block;
-  background-color: #ff0000;
-  /* Red */
-  color: #fff;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  margin-left: 8px;
-  border: 2px solid #fff;
-  vertical-align: middle;
-  transform: rotate(-5deg);
-  box-shadow: 2px 2px 0px #000;
-}
-
-/* Completed Tag Style */
-.completed-tag {
-  display: inline-block;
-  background-color: #00ff00;
-  /* Green */
-  color: #000;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  margin-left: 8px;
-  border: 2px solid #000;
-  vertical-align: middle;
-  transform: rotate(5deg);
-  box-shadow: 2px 2px 0px #fff;
-  font-weight: 900;
-}
-
-/* Updating Tag Style */
-.updating-tag {
-  display: inline-block;
-  background-color: var(--vp-c-brand-3);
-  /* Signal Orange */
-  color: #fff;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  margin-left: 8px;
-  border: 2px solid #fff;
-  vertical-align: middle;
-  transform: rotate(-2deg);
-  box-shadow: 2px 2px 0px #000;
-  font-weight: 900;
-  animation: blink 1s step-end infinite;
-}
-
-/* Coming Soon Tag Style */
-.soon-tag {
-  display: inline-block;
-  background-color: #00ffff;
-  /* Cyan */
-  color: #000;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  margin-left: 8px;
-  border: 2px solid #000;
-  vertical-align: middle;
-  transform: rotate(3deg);
-  box-shadow: 2px 2px 0px #fff;
-  font-weight: 900;
-}
-
-/* Link Styling */
-.vp-doc a {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-  border-bottom: 4px solid var(--vp-c-brand-1);
-  font-weight: 700;
-  transition: all 0.1s;
-  background: #000;
-  padding: 0 4px;
-}
-
-.vp-doc a:hover {
-  background-color: var(--vp-c-brand-1);
-  color: #000;
-  border-color: #000;
-}
-
-/* Code Blocks - Raw Terminal */
-.vp-doc div[class*='language-'] {
-  border-radius: 0;
-  border: var(--nb-border);
-  background-color: #000 !important;
-  box-shadow: 12px 12px 0px rgba(255, 255, 255, 0.2);
-  margin: 2rem 0;
-}
-
-/* 
-   HIGH CONTRAST SYNTAX HIGHLIGHTING 
-   Overriding Shiki/Prism colors for visibility 
-*/
-:root {
-  --vp-code-block-bg: #000000;
-  --vp-code-line-height: 1.7;
-  --vp-code-font-size: 14px;
-}
-
-/* Force bright colors for code tokens */
-.vp-doc pre {
-  color: #ffffff !important;
-  /* Default text white */
-}
-
-span.line {
-  display: inline-block;
-}
-
-/* Scrollbar - Chunky */
-::-webkit-scrollbar {
-  width: 20px;
-  background: #000;
-  border-left: 4px solid var(--vp-c-brand-1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--vp-c-brand-1);
-  border: 4px solid #000;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--vp-c-brand-3);
-}
-
-/* Selection */
-::selection {
-  background: var(--vp-c-brand-3);
-  color: #fff;
-}
-
-/* Headings - SHOUTING */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--vp-font-family-base);
-  font-weight: 900 !important;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  border-left: 8px solid var(--vp-c-brand-2);
-  padding-left: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-h1 {
-  font-size: 4rem !important;
-  line-height: 1 !important;
-  text-shadow: 4px 4px 0px var(--vp-c-brand-1);
+/* Vertical Writing Utility */
+.tategaki {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-feature-settings: "vhal" 1, "vpal" 1;
+  /* Optimize for vertical */
+  letter-spacing: 0.3em;
+  line-height: 2;
 }
 
-/* Custom Utilities */
-.crt-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 9999;
+/* Navbar */
+.VPNavBar {
+  background-color: var(--vp-c-bg) !important;
+  border-bottom: 1px solid transparent !important;
+  /* Shadow is too modern, use delicate line or nothing */
 }
 
-/* 
-   EXTREME FEATURE CARDS OVERRIDE 
-   Transforming standard cards into "Data Blocks"
-*/
+.VPNavBar .content {
+  background: transparent !important;
+}
+
+/* Sidebar */
+.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+}
+
+/* Buttons -> "Wooden Tags" or "Paper Slips" */
+.VPButton.brand {
+  background-color: transparent;
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 2px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-c-brand-1);
+  color: #F7F6F0;
+  border-color: var(--vp-c-brand-1);
+}
+
+/* Feature Cards */
 .VPFeatures {
-  padding: 40px 0 !important;
-  background-color: transparent !important;
+  background: transparent !important;
+  padding: 60px 0 !important;
 }
 
 .VPFeature {
-  border: 4px solid var(--vp-c-brand-1) !important;
+  background-color: transparent !important;
+  border: 1px solid var(--vp-c-divider) !important;
   border-radius: 0 !important;
-  background-color: #000 !important;
-  box-shadow: 8px 8px 0px var(--vp-c-brand-2) !important;
-  transition: all 0.1s steps(2) !important;
+  /* Sharp edges */
+  box-shadow: none !important;
+  transition: all 0.5s ease !important;
   position: relative;
-  overflow: hidden;
 }
 
 .VPFeature:hover {
-  transform: translate(-4px, -4px) !important;
-  box-shadow: 12px 12px 0px var(--vp-c-brand-3) !important;
-  background-color: #0a0a0a !important;
+  border-color: var(--vp-c-brand-1) !important;
+  background-color: rgba(110, 117, 93, 0.03) !important;
 }
 
-.VPFeature::before {
-  content: 'DATA_BLOCK';
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--vp-c-brand-1);
-  color: #000;
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.7rem;
-  padding: 2px 6px;
+/* The Inkan (Red Stamp) Style */
+.inkan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--jap-red);
+  color: var(--jap-red);
+  border-radius: 8px;
+  /* Slightly worn corners */
+  font-size: 24px;
   font-weight: 900;
+  line-height: 1;
+  font-family: 'Zen Old Mincho', serif;
+  position: relative;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+  transform: rotate(-5deg);
+  /* Hand-stamped imperfection */
 }
 
-.VPFeature .title {
-  font-family: var(--vp-font-family-base) !important;
-  font-weight: 900 !important;
-  font-size: 1.5rem !important;
-  text-transform: uppercase !important;
-  color: #fff !important;
-  margin-bottom: 1rem !important;
-  border-bottom: 2px solid var(--vp-c-brand-3);
-  display: inline-block;
-  line-height: 1.2 !important;
+.dark .inkan {
+  mix-blend-mode: normal;
 }
 
-.VPFeature .details {
-  font-family: var(--vp-font-family-mono) !important;
-  font-size: 0.9rem !important;
-  color: var(--vp-c-text-2) !important;
-  line-height: 1.6 !important;
+/* Links */
+.vp-doc a {
+  color: var(--jap-red);
+  /* Use red for links like annotations */
+  text-decoration: none;
+  border-bottom: 1px dotted var(--vp-c-divider);
+  transition: border-bottom 0.3s;
 }
 
-/* Icon overrides if they exist */
-.VPFeature .icon {
-  background-color: var(--vp-c-brand-1) !important;
-  color: #000 !important;
-  border-radius: 0 !important;
-  border: 2px solid #fff !important;
+.vp-doc a:hover {
+  color: var(--jap-red);
+  border-bottom: 1px solid var(--jap-red);
+}
+
+/* Code Blocks */
+.vp-doc div[class*='language-'] {
+  border-radius: 0;
+  border-left: 4px solid var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg-alt) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--vp-c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 4px;
 }

@@ -1,261 +1,191 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import gsap from 'gsap'
 
-const titleRef = ref(null)
-
 onMounted(() => {
-  // Chaotic Reveal
+  // Ink Reveal
   const tl = gsap.timeline()
   
-  tl.fromTo('.chaos-text', 
-    { opacity: 0, scale: 2, rotation: 10 },
-    { opacity: 1, scale: 1, rotation: 0, duration: 0.2, stagger: 0.05, ease: 'rough' }
+  tl.fromTo('.inkan', 
+    { opacity: 0, scale: 1.5, rotate: 10 },
+    { opacity: 1, scale: 1, rotate: -5, duration: 1, ease: 'elastic.out(1, 0.5)' }
   )
-  .to('.chaos-text', {
-    x: 'random(-5, 5)',
-    y: 'random(-5, 5)',
-    duration: 0.1,
-    repeat: 10,
-    yoyo: true
-  })
+  .fromTo('.tategaki-title',
+    { opacity: 0, y: -20 },
+    { opacity: 1, y: 0, duration: 2, ease: 'power2.out', stagger: 0.2 },
+    "-=0.5"
+  )
+  .fromTo('.action-area',
+    { opacity: 0 },
+    { opacity: 1, duration: 1.5 },
+    "-=1"
+  )
 })
 </script>
 
 <template>
-  <div class="chaos-hero">
-    <div class="noise-bg"></div>
-    
-    <div class="content-grid">
-      <div class="grid-item title-area">
-        <h1 class="chaos-title">
-          <span class="chaos-text">CODE</span>
-          <span class="chaos-text">IS</span>
-          <span class="chaos-text highlight">WAR</span>
-        </h1>
-      </div>
+  <div class="jap-hero">
+    <div class="hero-container">
       
-      <div class="grid-item info-area">
-        <div class="raw-box">
-          <div class="label">STATUS:</div>
-          <div class="value blink">CRITICAL</div>
-        </div>
-        <div class="raw-box">
-          <div class="label">LOC:</div>
-          <div class="value">99999+</div>
+      <!-- The Seal (Inkan) -->
+      <div class="seal-area">
+        <div class="inkan">
+          茅野
         </div>
       </div>
 
-      <div class="grid-item desc-area">
-        <p class="manifesto">
-          WE BUILD SYSTEMS TO BREAK THEM. <br>
-          RUST // PYTHON // WEB <br>
-          NO SAFETY. NO MERCY.
+      <!-- Vertical Text Area -->
+      <div class="text-area">
+        <h1 class="tategaki-title">
+          <span>茅</span><span>野</span><span>の</span><span>コ</span><span>ー</span><span>ド</span>
+        </h1>
+        <p class="tategaki-subtitle">
+          無常 ・ 不完全 ・ 簡素
         </p>
       </div>
-      
-      <div class="grid-item action-area">
-        <a href="/Rust/Basics/install" class="brutal-btn">
-          INITIALIZE_SEQUENCE
+
+      <!-- Action (Horizontal is better for buttons usually, but let's keep it minimal) -->
+      <div class="action-area">
+        <a href="/Rust/Basics/install" class="enter-link">
+          入室する
         </a>
       </div>
+
     </div>
   </div>
 </template>
 
 <style scoped>
-.chaos-hero {
-  min-height: 90vh;
+.jap-hero {
+  min-height: 85vh; /* Tall canvas */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  border-bottom: var(--nb-border);
-  background: #000;
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
-  border: 4px solid var(--vp-c-brand-3); /* Orange Border */
-  transform: rotate(-1deg);
-}
-
-.grid-item {
-  border: var(--nb-border);
-  padding: 40px;
-  background: #000;
+.hero-container {
   position: relative;
-}
-
-.grid-item::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 4px;
   width: 100%;
-  height: 100%;
-  background: var(--vp-c-brand-2);
-  z-index: -1;
-}
-
-.title-area {
-  grid-column: 1 / -1;
-  text-align: center;
-  border-color: var(--vp-c-brand-1);
-}
-
-.chaos-title {
-  font-size: 8rem;
-  line-height: 0.8;
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.chaos-text.highlight {
-  color: var(--vp-c-brand-3); /* Orange */
-  text-decoration: underline;
-}
-
-.info-area {
+  max-width: 1000px;
+  height: 600px; /* Canvas area */
   display: flex;
-  gap: 20px;
+  flex-direction: row-reverse; /* Japanese read right-to-left conventionally in vertical */
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 60px;
 }
 
-.raw-box {
-  border: 2px solid #fff;
-  padding: 10px;
-  text-align: center;
+.seal-area {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 10;
 }
 
-.label {
-  font-size: 0.8rem;
-  color: #888;
-}
-
-.value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--vp-c-brand-1);
-}
-
-.blink {
-  animation: blink 0.5s step-end infinite;
-}
-
-.desc-area {
-  grid-column: 2 / 3;
+.text-area {
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
+  gap: 40px;
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 80px;
 }
 
-.manifesto {
-  font-family: var(--vp-font-family-mono);
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: #fff;
+.tategaki-title {
+  writing-mode: vertical-rl;
+  font-family: var(--vp-font-family-headings);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  height: 400px; /* Ensure enough height for vertical flow */
+}
+
+.tategaki-title span {
+  display: inline-block; /* Allows individual animation if needed */
+}
+
+.tategaki-subtitle {
+  writing-mode: vertical-rl;
+  font-family: var(--vp-font-family-base);
+  font-size: 1.2rem;
+  color: var(--vp-c-text-2);
+  letter-spacing: 0.3em;
+  line-height: 2;
+  height: 300px;
+  border-left: 1px solid var(--vp-c-divider); /* A guide line */
+  padding-left: 20px;
 }
 
 .action-area {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-  padding: 60px;
-  border-color: var(--vp-c-brand-3);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.brutal-btn {
-  font-size: 2rem;
-  font-weight: 900;
-  background: var(--vp-c-brand-1);
-  color: #000;
-  padding: 20px 60px;
+.enter-link {
+  font-family: var(--vp-font-family-headings);
+  font-size: 1.1rem;
+  color: var(--jap-red);
   text-decoration: none;
-  border: 4px solid #000;
-  box-shadow: 10px 10px 0px var(--vp-c-brand-2);
-  transition: all 0.1s;
+  border: 1px solid var(--jap-red);
+  padding: 12px 36px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.brutal-btn:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 15px 15px 0px var(--vp-c-brand-3);
-  background: #fff;
-}
-
-.brutal-btn:active {
-  transform: translate(5px, 5px);
-  box-shadow: 0 0 0;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
+.enter-link:hover {
+  background-color: var(--jap-red);
+  color: #fff;
 }
 
 @media (max-width: 768px) {
-  .chaos-hero {
-    min-height: auto;
-    padding: 40px 10px;
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
   }
 
-  .content-grid {
-    grid-template-columns: 1fr;
-    transform: none;
-    gap: 10px;
-    border-width: 2px;
+  .text-area {
+    flex-direction: column; /* Back to horizontal stacking for mobile if vertical is too tall? 
+                             Actually, let's keep vertical but smaller */
+    flex-direction: row-reverse; 
+    height: auto;
+    padding-top: 0;
   }
 
-  .grid-item {
-    padding: 20px;
+  .tategaki-title {
+    font-size: 3rem;
+    height: auto;
   }
 
-  .chaos-title {
-    font-size: 3rem; /* Much smaller for mobile */
-    line-height: 1;
-    word-break: break-word; /* Prevent overflow */
+  .tategaki-subtitle {
+    height: auto;
+    border-left: none;
+    border-top: 1px solid var(--vp-c-divider);
+    padding-left: 0;
+    padding-top: 20px;
   }
 
-  .info-area {
-    flex-direction: column; /* Stack info boxes */
-    width: 100%;
+  .seal-area {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-bottom: 20px;
   }
-
-  .raw-box {
-    width: 100%;
-  }
-
-  .desc-area {
-    grid-column: 1 / -1;
-  }
-
-  .manifesto {
-    font-size: 1rem;
-  }
-
+  
   .action-area {
-    padding: 30px 10px;
-  }
-
-  .brutal-btn {
-    font-size: 1.2rem;
-    padding: 15px 30px;
-    width: 100%;
-    text-align: center;
-    white-space: normal; /* Allow text wrap */
-  }
-}
-
-@media (max-width: 480px) {
-  .chaos-title {
-    font-size: 2.5rem;
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      margin-top: 40px;
   }
 }
 </style>
